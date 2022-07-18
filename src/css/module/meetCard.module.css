@@ -1,0 +1,31 @@
+.meet{
+	padding-top: 5rem;
+}
+
+.cards{
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 30px;
+}
+
+.card{
+	height: 100%;
+	padding: 2rem;
+	border-radius: 8px;
+	background-color: #2d2030;
+}
+
+.card:hover{
+	background-color: #2d2435;
+}
+
+.meetTitle{
+	text-transform: uppercase;
+	font-size: 1.1em;
+}
+
+.meetDesc{
+	font-weight: 400;
+	color: rgba(255,255,255,0.5);
+	margin-top: 1rem;
+}

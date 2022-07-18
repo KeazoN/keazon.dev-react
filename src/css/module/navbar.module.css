@@ -1,0 +1,56 @@
+nav{
+	padding: 1rem;
+}
+
+.navContent{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logoNav img{
+	width: 55px;
+	height: auto;
+	transition: .1s;
+}
+
+.menu{
+	display: flex;
+	align-items: center;
+}
+
+.menu li{
+	list-style-type: none;
+	margin-left: 30px;
+}
+
+.menu li a{
+	color: rgba(255, 255, 255, 0.5);
+	font-weight: 600;
+	transition: 50ms;
+}
+
+.menu li a:hover{
+	color: #fff;
+}
+
+.menu li a.active{
+	color: #fff;
+}
+
+.githubNav a{
+	padding: 1rem;
+	background-color: #000;
+	font-size: 1.4em;
+	transition: .3s;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.githubNav a:hover{
+	background-color: #222;
+}

@@ -1,0 +1,33 @@
+.skills{
+	padding-top: 5rem;
+}
+
+.contentTitle h1{
+	text-transform: uppercase;
+	font-size: 2.2em;
+	padding: 1rem 0;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.keazonSkills{
+	padding-top: 1rem;
+	display: grid;
+	width: 100%;
+	grid-template-columns: auto auto auto;
+	gap: 5px;
+}
+
+.keazonSkills a{
+	padding: 1rem;
+	background-color: #2d2030;
+	transition: .1s;
+}
+
+.keazonSkills a:hover{
+	background-color: #2d2035;
+}
+
+.power{
+	display: flex;
+	gap: 0.8rem;
+}
