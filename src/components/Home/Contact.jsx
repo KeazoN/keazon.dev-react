@@ -1,16 +1,15 @@
 import CatSvg from '../../img/cat.svg'
 import Form from './Contact/Form'
-import { contact, contentTitle, contactContent, catsSvg, cats } from '../../css/module/contact.module.css'
 
 function Contact() {
 	return (
-		<section class={contact}>
-					<div class="container">
-						<div class={contentTitle}><h1>Contact</h1></div>
-						<div class={contactContent}>
+		<section className="contact" id="contact">
+					<div className="container">
+						<div className="contentTitle"><h1>Contact</h1></div>
+						<div className="contactContent">
 							<Form />
-							<div class={catsSvg}>
-								<div class={cats}>
+							<div className="catsSvg">
+								<div className="cats">
 									<img src={CatSvg} />
 								</div>
 							</div>

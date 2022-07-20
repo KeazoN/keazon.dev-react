@@ -7,7 +7,6 @@ import Skills from '../components/Home/Skills'
 import SkillsData from '../data/SkillsData'
 import Contact from '../components/Home/Contact'
 
-
 function Home() {
 	return(
 		<>

@@ -1,17 +1,17 @@
-import { meet, cards, card, meetTitle, meetDesc } from '../../css/module/meetCard.module.css'
+import { Link } from 'react-router-dom'
 
 function MeetCard({meetData}) {
 	return(
-		<section className={meet}>
+		<section className="meet" id="meet">
 			<div className="container">
-				<div className={cards}>
+				<div className="cards">
 					{meetData.map((data, index) => (  
-			            <a href={data.url}>
-							<div className={card}>
-								<h1 className={meetTitle}>{data.title}</h1>
-								<p className={meetDesc}>{data.desc}</p>
+			            <Link key={data.id}  to={data.url}>
+							<div className="card">
+								<h1 className="meetTitle">{data.title}</h1>
+								<p className="meetDesc">{data.desc}</p>
 							</div>
-						</a>
+						</Link>
 			        ))} 
 				</div>
 			</div>
