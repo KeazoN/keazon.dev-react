@@ -2,8 +2,8 @@ import CatSvg from '../../img/cat.svg'
 import Form from './Contact/Form'
 
 function Contact() {
-	return (
-		<section className="contact" id="contact">
+    return (
+        <section className="contact" id="contact">
 					<div className="container">
 						<div className="contentTitle"><h1>Contact</h1></div>
 						<div className="contactContent">
@@ -16,7 +16,7 @@ function Contact() {
 						</div>
 					</div>
 				</section>
-	)
+    )
 }
 
 export default Contact

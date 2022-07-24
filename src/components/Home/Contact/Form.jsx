@@ -1,6 +1,6 @@
 function Form() {
-	return(
-		<form id="formMail" action="">
+    return (
+        <form id="formMail" action="">
 			<div className="nameLast">
 				<div className="name">
 					<label for="name">Name <span className="required">*</span></label>
@@ -23,7 +23,7 @@ function Form() {
 				<input type="submit" value="Send" />
 			</div>
 		</form>
-	)
+    )
 }
 
 export default Form

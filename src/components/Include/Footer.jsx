@@ -1,6 +1,6 @@
-function Footer({mediaData}) {
-	return(
-		<section className="socialMedia">
+function Footer({ mediaData }) {
+    return (
+        <section className="socialMedia">
 			<div className="container">
 				<div className="socialMediaContent">
 					<div className="icons">
@@ -19,7 +19,7 @@ function Footer({mediaData}) {
 				</div>
 			</div>
 		</section>
-	)
+    )
 }
 
 export default Footer

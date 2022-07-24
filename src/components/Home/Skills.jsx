@@ -1,6 +1,6 @@
-function Skills({skillsData}) {
-	return(
-		<section className="skills" id="skills">
+function Skills({ skillsData }) {
+    return (
+        <section className="skills" id="skills">
 			<div className="container">
 				<div className="contentTitle"><h1>Skills</h1></div>
 				<div className="keazonSkills">
@@ -15,7 +15,7 @@ function Skills({skillsData}) {
 					</div>
 				</div>
 		</section>
-		)
+    )
 }
 
 export default Skills

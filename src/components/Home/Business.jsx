@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEarth } from '@fortawesome/free-solid-svg-icons'
 
-function Business({businessData}) {
-	return(
-		<section className="project" id="reference">
+function Business({ businessData }) {
+    return (
+        <section className="project" id="reference">
 			<div className="container">
 				<div className="contentTitle"><h1>I worked with</h1></div>
 				<div className="cards">
@@ -32,7 +32,7 @@ function Business({businessData}) {
 				</div>
 			</div>
 		</section>
-	)
+    )
 }
 
 export default Business

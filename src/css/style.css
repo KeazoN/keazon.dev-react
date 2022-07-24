@@ -543,6 +543,17 @@ footer .copyright{
 	z-index: 5555;
 }
 
+.homeText.placeholder{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.homeText.placeholder h1{
+	font-size: 2em;
+}
+
+
 @media screen and (max-width: 1260px) {
 	.cats{
 		right: -16rem;

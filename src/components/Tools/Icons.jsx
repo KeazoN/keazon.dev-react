@@ -4,18 +4,18 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 const libraryAdd = library.add(fab);
 
 function GithubIcon() {
-	return (
-		<FontAwesomeIcon icon={['fab', 'github']} />
-	)
+    return (
+        <FontAwesomeIcon icon={['fab', 'github']} />
+    )
 }
 
 function SpotifyIcon() {
-	return (
-		<FontAwesomeIcon icon={['fab', 'spotify']} />
-	)
+    return (
+        <FontAwesomeIcon icon={['fab', 'spotify']} />
+    )
 }
 
 export {
-	GithubIcon,
-	SpotifyIcon
+    GithubIcon,
+    SpotifyIcon
 }
