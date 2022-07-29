@@ -57,7 +57,7 @@ export default [
 		id: 9,
 		languageWebsite: 'https://nodejs.org/',
 		languageIcon: <FontAwesomeIcon icon={['fab', 'node-js']} />,
-		languageName: 'Node'
+		languageName: 'Node.js'
 	},
 	{
 		id: 10,
@@ -75,6 +75,6 @@ export default [
 		id: 12,
 		languageWebsite: 'https://reactjs.org/',
 		languageIcon: <FontAwesomeIcon icon={['fab', 'react']} />,
-		languageName: 'React'
+		languageName: 'React.js'
 	}
 ]

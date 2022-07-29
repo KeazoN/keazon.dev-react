@@ -29,6 +29,12 @@ body{
 	padding: 0 1rem;
 }
 
+.allContent{
+	padding-bottom: 0.3rem;
+	background-color: #5B53E1;
+	width: 100%;
+}
+
 nav{
 	padding: 1rem;
 }
@@ -48,6 +54,7 @@ nav .logoNav img{
 nav .menu{
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 nav .menu li{
@@ -55,35 +62,35 @@ nav .menu li{
 	margin-left: 30px;
 }
 
-nav .menu li a{
+nav .menu li a *{
+	width: 30px;
+	height: 30px;
 	color: rgba(255, 255, 255, 0.5);
 	font-weight: 600;
 	transition: 50ms;
 }
 
-nav .menu li a:hover{
-	color: #fff;
-}
-
-nav .menu li a.active{
-	color: #fff;
+nav .menu li a svg:hover{
+	fill: #fff !important;
 }
 
 .githubNav a{
-	padding: 1rem;
-	background-color: #000;
-	font-size: 1.4em;
+	padding: 0.6rem;
+	background-color: #2d2060;
 	transition: .3s;
 	border-radius: 50%;
-	width: 40px;
-	height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+.githubNav a *{
+	width: 25px !important;
+	height: 25px !important;
+}
+
 .githubNav a:hover{
-	background-color: #222;
+	opacity: 0.7;
 }
 
 /* NAV FİNİSH */
@@ -97,11 +104,13 @@ nav .menu li a.active{
 	align-items: center;
 	justify-content: space-between;
 	gap: 5rem;
+	width: 100%;
 }
 
 .home .homePicture img{
-	width: 280px;
-	height: auto;
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
 	border-radius: 50%;
 	border: 6px solid #5B53E1;
 }
@@ -129,6 +138,11 @@ nav .menu li a.active{
 	border-radius: 8px;
 	background-color: #1DB954;
 	font-weight: 500;
+	transition: 0.2s;
+}
+
+.spotifyListening a:hover{
+	background-color: darkolivegreen;
 }
 
 /* Home Finish */
@@ -195,7 +209,7 @@ nav .menu li a.active{
 
 .project .cardBanner{
 	width: 100%;
-	height: 28%;
+	height: 40%;
 	position: absolute;
 }
 
@@ -290,7 +304,7 @@ nav .menu li a.active{
 }
 
 .keazonSkills a:hover{
-	background-color: #2d2035;
+	background-color: #2d2040;
 }
 
 /* SKILLS FINISH */
@@ -343,7 +357,7 @@ nav .menu li a.active{
 }
 
 .contact input[type="text"]:focus, .contact input[type="email"]:focus, .contact textarea:focus{
-	background-color: #2d2035;
+	background-color: #2d2040;
 }
 
 .contact textarea{
@@ -553,6 +567,112 @@ footer .copyright{
 	font-size: 2em;
 }
 
+/* Github */
+
+.github{
+	padding-top: 5rem;
+}
+
+.github .cards{
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 0.8rem;
+	padding-top: 2rem;
+	border-radius: 8px;
+}
+
+.github .cards .card{
+	border-radius: 8px;
+	padding: 1rem;
+	overflow: hidden;
+	background-color: #2D2030;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	transition: .1s;
+}
+
+.github .cards .card:hover{
+	background-color: #2d2040;
+}
+
+.github .cards .card .card-title h1{
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.github .cards .card .card-desc{
+	margin-top: 1rem;
+}
+
+.github .cards .card #noDesc p{
+	font-size: 1em;
+}
+
+.github .cards .card .card-desc p{
+	color: rgba(255, 255, 255, 0.3);
+	font-size: 0.9em;
+	height: 80px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.github .cards .card .card-bottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: flex-end;
+	margin-top: 0.8rem;
+}
+
+.github .cards .card .card-bottom .card-bottom-left{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.card-bottom-right{
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.card-bottom-right .language h6{
+	font-size: 0.9em;
+	font-weight: 400;
+}
+
+#colorRange{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: #fafafa;
+	border: 2px solid #2d2030;
+}
+
+.phpColorRange{
+	background-color: mediumpurple !important;
+}
+
+.jsColorRange{
+	background-color: yellow !important;
+}
+
+.htmlColorRange{
+	background-color: orangered !important;
+}
+
+.cssColorRange{
+	background-color: darkslateblue !important;
+}
+
+.card-fork *{
+	color: #40BAF1;
+}
+
+.card-star *{
+	color: #fcec04;
+}
 
 @media screen and (max-width: 1260px) {
 	.cats{
@@ -617,8 +737,15 @@ footer .copyright{
 	.home .homeText h1{
 		font-size: 3em;
 	}
+	
 	.home .homeText p{
-		width: 550px;
+		width: 100%;
+	}
+	.home .homeText h1{
+		width: 100%;
+	}
+	.home .homeText.placeholder span{
+		width: 100%;
 	}
 }
 
@@ -631,6 +758,9 @@ footer .copyright{
 	}
 	nav .container{
 		justify-content: center;
+	}
+	.github .cards{
+		grid-template-columns: auto;
 	}
 }
 
@@ -648,9 +778,6 @@ footer .copyright{
 	}
 	.contactContent form{
 		width: 100%;
-	}
-	.home .homeText p{
-		width: auto;
 	}
 }
 

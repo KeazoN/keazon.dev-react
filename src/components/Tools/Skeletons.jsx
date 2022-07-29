@@ -27,7 +27,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
                 <p><Skeleton count={3} height={9} width={`100%`} /></p>
             </SkeletonTheme>
             <SkeletonTheme baseColor="#555" highlightColor="#f8f2db">
-              <Skeleton height={40} width={`23%`} />
+              <Skeleton height={40} width={`37%`} />
             </SkeletonTheme>
           </div>
           <div className="homePicture placeholder">

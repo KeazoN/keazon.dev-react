@@ -1,6 +1,9 @@
 function Form() {
+	const handleSubmit = e => {
+		e.preventDefault()
+	}
     return (
-        <form id="formMail" action="">
+        <form id="formMail" onSubmit={handleSubmit} action="">
 			<div className="nameLast">
 				<div className="name">
 					<label for="name">Name <span className="required">*</span></label>
@@ -20,7 +23,7 @@ function Form() {
 				<textarea name="subject" className="subject-textarea" placeholder="You can consult me on any topic or make a joke."></textarea>
 			</div>
 			<div className="submit">
-				<input type="submit" value="Send" />
+				<input type="submit" value="Send (Not Working)" />
 			</div>
 		</form>
     )

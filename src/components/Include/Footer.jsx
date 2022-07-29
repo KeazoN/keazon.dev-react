@@ -12,7 +12,7 @@ function Footer({ mediaData }) {
 					</div>
 					<footer>
 						<div className="container">
-							<p>This project <a target="_blank" href="https://github.mco/keazon/keazonme">open source</a>.</p>
+							<p>This project <a target="_blank" href="https://github.com/keazon/keazon.me-react">open source</a>.</p>
 							<p><i className="copyright">&copy;</i> Made by ❤ KeazoN</p>
 						</div>
 					</footer>

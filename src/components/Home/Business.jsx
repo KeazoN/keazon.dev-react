@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEarth } from '@fortawesome/free-solid-svg-icons'
+import { CgWebsite } from 'react-icons/cg'
 
 function Business({ businessData }) {
     return (
@@ -24,7 +23,7 @@ function Business({ businessData }) {
 									<p>{data.brandDesc}</p>
 								</div>
 								<div className="cardButtons">
-									<a href={data.brandWebsite}><FontAwesomeIcon icon={faEarth} /> Website</a>
+									<a href={data.brandWebsite}><CgWebsite /> Website</a>
 								</div>
 							</div>
 						</div>

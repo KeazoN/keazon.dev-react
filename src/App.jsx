@@ -11,6 +11,7 @@ import SocialMediaData from './data/SocialMediaData'
 function App() {
   return (
     <>
+      <header className="allContent"></header>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
