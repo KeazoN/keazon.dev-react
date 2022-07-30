@@ -16,6 +16,14 @@
       <meta property="og:image" content="https://keazon.me/keazon_logo_heart.png" />
       <meta property="og:image:type" content="image/png" />
       <meta content="I am 15 years old. I'm web developer and designer. I am currently learning javascript." property="og:description" />
+      <script type="module">
+        import process from "process";
+        import EventEmitter from "events";
+        import {Buffer} from "buffer";
+        window.Buffer = Buffer;
+        window.process = process;
+        window.EventEmitter = EventEmitter;
+      </script>
   </head>
   <body>
     <div id="root"></div>
