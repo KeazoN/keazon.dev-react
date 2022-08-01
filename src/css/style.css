@@ -108,8 +108,8 @@ nav .menu li a svg:hover{
 }
 
 .home .homePicture img{
-	width: 300px;
-	height: 300px;
+	width: 350px;
+	height: 350px;
 	object-fit: cover;
 	border-radius: 50%;
 	border: 6px solid #5B53E1;
@@ -133,7 +133,18 @@ nav .menu li a svg:hover{
 	margin-top: 1rem;
 }
 
+.spotifyListening{
+	display: flex;
+}
+
 .spotifyListening a{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	animation-name: openApp;
+  	animation-duration: 0.3s;
+  	animation-timing-function: linear;
+	animation-direction: alternate;
 	padding: 0.5rem 1.5rem;
 	border-radius: 8px;
 	background-color: #1DB954;
@@ -148,11 +159,24 @@ nav .menu li a svg:hover{
 .spotifyListeningActive{
 	width: 100%;
 	display: flex;
+	white-space: none;
 	align-items: center;
 	border-radius: 8px;
 	position: relative;
 	overflow: hidden;
+	animation-name: openApp;
+  	animation-duration: 0.3s;
+  	animation-timing-function: linear;
+	animation-direction: alternate;
 	max-height: 100px;
+}
+
+@keyframes openApp {
+	from{
+		transform: scale(0.1,0.1);
+	}to{
+		transform: scale(1,1);
+	}
 }
 
 .spotifyListeningActive .image{
@@ -170,9 +194,6 @@ nav .menu li a svg:hover{
 }
 
 .song-content{
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
 	padding: 1rem;
 }
 
@@ -187,16 +208,14 @@ nav .menu li a svg:hover{
 }
 
 .song-content h1:hover{
-	width: 300px;
+	width: 260px;
+	text-decoration: underline;
 }
 
 .song-content h3{
 	font-weight: 500;
-}
-
-.song-content p{
-	font-size: 0.8em;
-	color: rgba(255,255,255,0.5);
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .spotifyIcon{
@@ -209,7 +228,41 @@ nav .menu li a svg:hover{
 .spotifyIcon svg{
 	width: 150px;
 	height: auto;
-	fill: rgba(255,255,255,0.5);
+	fill: rgba(255,255,255,0.3);
+}
+
+.timer-content{
+	margin-top: 15px;
+	display: flex;
+	align-items: baseline;
+	gap: 5px;
+}
+
+.timer-content p{
+	font-size: 0.6em;
+	color: rgba(255,255,255,0.7);
+}
+
+.timer{
+	width: 100%;
+	max-width: 150px;
+	height: 5px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 14px;
+	position: relative;
+}
+
+.timerRange{
+	width: 100%;
+	max-width: 180px;
+}
+
+.timer-fill{
+	position: abolute;
+	top: 0;
+	height: 5px;
+	background-color: #fff;
+	border-radius: 14px;
 }
 
 .imageEffect{
@@ -339,6 +392,9 @@ nav .menu li a svg:hover{
 }
 
 .cardButtons a{
+	display: flex;
+	align-items: center;
+	gap: 4px;
 	padding: 0.5rem 0.8rem;
 	background-color: #5B53E1;
 	border-radius: 8px;
@@ -742,6 +798,12 @@ footer .copyright{
 
 .card-fork *{
 	color: #40BAF1;
+}
+
+.card-fork p, .card-star p{
+	display: flex;
+	align-items: center;
+	gap: 4px;
 }
 
 .card-star *{

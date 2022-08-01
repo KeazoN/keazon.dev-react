@@ -7,7 +7,6 @@ const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 const refresh_token = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
 
 const getAccessToken = async () => {
-    console.log(client_secret);
     const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
     const response = await fetch(TOKEN_ENDPOINT, {
         method: "POST",
@@ -44,6 +43,8 @@ export default async function getNowPlayingItem(client_id, client_secret, refres
     }
     const song = await response.json();
     const songItem = song.item;
+    const durationMs = song.item.duration_ms;
+    const progressMs = song.progress_ms;
     const albumImageUrl = song.item.album.images[0].url;
     const artist = song.item.artists[0].name;
     const isPlaying = song.is_playing;
@@ -52,6 +53,8 @@ export default async function getNowPlayingItem(client_id, client_secret, refres
     
     return {
         songItem,
+        durationMs,
+        progressMs,
         albumImageUrl,
         artist,
         isPlaying,

@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import { FaSpotify, FaHeadphonesAlt } from 'react-icons/fa'
-import getNowPlayingItem from "./SpotifyApi";
+import getNowPlayingItem from './SpotifyApi'
 import { usePalette } from 'react-palette'
+import { Range, getTrackBackground } from "react-range";
 
 export const SpotifyNowPlaying = (props) => {
-
     const [result, setResult] = useState({});
+    const STEP = 0.1;
+    const MIN = 0;
+    const MAX = 100;
+    const [values, setValues] = useState([50]);
 
     useEffect(() => {
         Promise.all([
@@ -19,7 +23,14 @@ export const SpotifyNowPlaying = (props) => {
         });
     });
 
-    const {data} = usePalette(result.albumImageUrl)
+    const {data} = usePalette(result.albumImageUrl);
+
+    function secondsToTime(second) {
+        const minutes = Math.floor(second / 60000);
+        const seconds = ((second % 60000) / 1000).toFixed(0);
+        const result = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        return result;
+    }
 
     if(result.songItem == null || result.isPlaying == false) {
         return (
@@ -39,12 +50,65 @@ export const SpotifyNowPlaying = (props) => {
                     </div>
                     <div className="song-content">
                         <div className="song-data">
-                            <h1>{result.title}</h1>
+                            <h1><a href={result.songUrl}>{result.title}</a></h1>
                             <h3>{result.artist}</h3>
                         </div>
-                        <p>Şu anda Dinliyor... <FaHeadphonesAlt /></p>
+                        <div className="timer-content">
+                            <p>{secondsToTime(result.progressMs)}</p>
+                            <div className="timerRange">
+                                <Range
+                                  values={[result?.progressMs]}
+                                  step={STEP}
+                                  min={MIN}
+                                  max={result?.durationMs || 1}
+                                  /*onChange={(values) => this.setState({ values })}*/
+                                  renderTrack={({ props, children }) => (
+                                    <div
+                                      style={{
+                                        ...props.style,
+                                        height: "8px",
+                                        display: "flex",
+                                        width: "100%",
+                                        cursor: "context-menu",
+                                      }}
+                                    >
+                                      <div
+                                        ref={props.ref}
+                                        style={{
+                                          height: "6px",
+                                          width: "100%",
+                                          borderRadius: "4px",
+                                          background: getTrackBackground({
+                                            values: [result?.progressMs],
+                                            colors: ["#fff", "rgba(255,255,255,0.3)"],
+                                            min: MIN,
+                                            max: result?.durationMs || 1
+                                          }),
+                                          cursor: "context-menu",
+                                          alignSelf: "center"
+                                        }}
+                                      >
+                                        {children}
+                                      </div>
+                                    </div>
+                                  )}
+                                  renderThumb={({ props, isDragged }) => (
+                                    <div
+                                      {...props}
+                                      style={{
+                                        ...props.style,
+                                        display: "none",
+                                        cursor: "context-menu"
+                                      }}
+                                    >
+                                    </div>
+                                  )}
+                                />
+                            </div>
+                            <p>{secondsToTime(result.durationMs)}</p>
+                        </div>
+                        <div className="spotifyIcon"><FaSpotify /></div>
                     </div>
-                    <div className="spotifyIcon"><FaSpotify /></div>
                 </div>
             </>
         )

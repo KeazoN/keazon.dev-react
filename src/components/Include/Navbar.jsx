@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { NavbarSkeleton } from '../Tools/Skeletons'
 import { BsGithub } from 'react-icons/bs'
 import { HiOutlineHome } from 'react-icons/hi'
+import { MdOutlineBusinessCenter } from 'react-icons/md'
 import { FaRegAddressCard } from 'react-icons/fa'
 import { AiOutlineFundProjectionScreen } from 'react-icons/ai'
 import { GiSkills } from 'react-icons/gi'
@@ -34,10 +35,11 @@ function Navbar() {
 							<ul className="menu">
 								<li><a href="#"><HiOutlineHome /></a></li>
 								<li><a href="#meet"><FaRegAddressCard /></a></li>
+								<li><a href="#reference"><MdOutlineBusinessCenter /></a></li>
 								<li><a href="#github"><AiOutlineFundProjectionScreen /></a></li>
 								<li><a href="#skills"><BiCodeBlock /></a></li>
 								<li><a href="#contact"><TiContacts /></a></li>
-								
+								<li class="githubNav"><a href="https://github.com/keazon/"><BsGithub /></a></li>
 							</ul>
 						</>
 					}
