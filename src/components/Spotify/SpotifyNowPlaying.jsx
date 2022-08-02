@@ -4,7 +4,7 @@ import getNowPlayingItem from './SpotifyApi'
 import { usePalette } from 'react-palette'
 import { Range, getTrackBackground } from "react-range";
 
-export const SpotifyNowPlaying = (props) => {
+export const SpotifyNowPlaying = props  => {
     const [result, setResult] = useState({});
     const STEP = 0.1;
     const MIN = 0;
@@ -51,7 +51,7 @@ export const SpotifyNowPlaying = (props) => {
                     <div className="song-content">
                         <div className="song-data">
                             <h1><a href={result.songUrl}>{result.title}</a></h1>
-                            <h3>{result.artist}</h3>
+                            <h3><a href={result.artistUrl}>{result.artist}</a></h3>
                         </div>
                         <div className="timer-content">
                             <p>{secondsToTime(result.progressMs)}</p>
@@ -70,6 +70,7 @@ export const SpotifyNowPlaying = (props) => {
                                         display: "flex",
                                         width: "100%",
                                         cursor: "context-menu",
+                                        transition: ".5s linear",
                                       }}
                                     >
                                       <div
@@ -78,6 +79,7 @@ export const SpotifyNowPlaying = (props) => {
                                           height: "6px",
                                           width: "100%",
                                           borderRadius: "4px",
+                                          transition: ".5s linear",
                                           background: getTrackBackground({
                                             values: [result?.progressMs],
                                             colors: ["#fff", "rgba(255,255,255,0.3)"],

@@ -47,16 +47,18 @@ export default async function getNowPlayingItem(client_id, client_secret, refres
     const progressMs = song.progress_ms;
     const albumImageUrl = song.item.album.images[0].url;
     const artist = song.item.artists[0].name;
+    const artistUrl = song.item.artists[0].external_urls.spotify;
     const isPlaying = song.is_playing;
     const songUrl = song.item.external_urls.spotify;
     const title = song.item.name;
-    
+
     return {
         songItem,
         durationMs,
         progressMs,
         albumImageUrl,
         artist,
+        artistUrl,
         isPlaying,
         songUrl,
         title,

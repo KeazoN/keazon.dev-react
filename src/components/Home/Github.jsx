@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
 import { FaStar } from 'react-icons/fa'
 import { TbGitFork } from 'react-icons/tb'
-
+import { VscRepo } from 'react-icons/vsc'
 
 function Github() {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [items, setItems] = useState([]);
+	const username = import.meta.env.VITE_GITHUB_USERNAME;
 
 	useEffect(() => {
-		fetch("https://api.github.com/users/keazon/repos")
+		fetch(`https://api.github.com/users/${username}/repos`)
 		.then(res => res.json())
 		.then((result) => {
 			setIsLoaded(true);
@@ -33,7 +34,7 @@ function Github() {
 							<a key={data.id} href={data.html_url}>
 						        <div className="card">
 						        	<div className="card-top">
-						        		<div className="card-title"><h1>{data.name}</h1></div>
+						        		<div className="card-title"><h1><VscRepo /> {data.name}</h1></div>
 						        		<div className="card-desc" id={(!data.description) ? "noDesc" :""}>
 							        		<p>
 								        		{data.description && data.description} 

@@ -6,7 +6,6 @@ import { SpotifyNowPlaying } from '../Spotify/SpotifyNowPlaying'
 
 function Main() {
 	const [loading, setLoading] = useState(false);
-
     useEffect(() => {
         setLoading(true);
         const timer = setTimeout(() => {

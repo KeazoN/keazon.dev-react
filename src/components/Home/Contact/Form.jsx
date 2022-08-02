@@ -1,9 +1,9 @@
 function Form() {
-	const handleSubmit = e => {
-		e.preventDefault()
+	const submitHandle = event => {
+		event.preventDefault();
 	}
     return (
-        <form id="formMail" onSubmit={handleSubmit} action="">
+        <form id="formMail" onSubmit={submitHandle}>
 			<div className="nameLast">
 				<div className="name">
 					<label for="name">Name <span className="required">*</span></label>

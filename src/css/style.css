@@ -51,6 +51,10 @@ nav .logoNav img{
 	transition: .1s;
 }
 
+nav .logoNav img:hover{
+	transform: rotate(25deg);
+}
+
 nav .menu{
 	display: flex;
 	align-items: center;
@@ -59,13 +63,13 @@ nav .menu{
 
 nav .menu li{
 	list-style-type: none;
-	margin-left: 30px;
+	margin-left: 25px;
 }
 
-nav .menu li a *{
+nav .menu li a svg{
 	width: 30px;
 	height: 30px;
-	color: rgba(255, 255, 255, 0.5);
+	fill: rgba(255, 255, 255, 0.5);
 	font-weight: 600;
 	transition: 50ms;
 }
@@ -75,22 +79,22 @@ nav .menu li a svg:hover{
 }
 
 .githubNav a{
-	padding: 0.6rem;
-	background-color: #2d2060;
+	padding: 0.5rem;
+	background-color: #5B53E1;
 	transition: .3s;
-	border-radius: 50%;
+	border-radius: 4px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.githubNav a *{
+.githubNav a svg{
 	width: 25px !important;
 	height: 25px !important;
 }
 
 .githubNav a:hover{
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
 /* NAV FİNİSH */
@@ -197,7 +201,7 @@ nav .menu li a svg:hover{
 	padding: 1rem;
 }
 
-.song-content h1{
+.song-data h1{
 	font-size: 1.2em;
 	font-weight: bold;
 	width: 240px;
@@ -207,8 +211,11 @@ nav .menu li a svg:hover{
 	transition: 0.2s;
 }
 
-.song-content h1:hover{
+.song-data h1:hover{
 	width: 260px;
+}
+
+.song-data a:hover{
 	text-decoration: underline;
 }
 
@@ -243,26 +250,9 @@ nav .menu li a svg:hover{
 	color: rgba(255,255,255,0.7);
 }
 
-.timer{
-	width: 100%;
-	max-width: 150px;
-	height: 5px;
-	background-color: rgba(255, 255, 255, 0.3);
-	border-radius: 14px;
-	position: relative;
-}
-
 .timerRange{
 	width: 100%;
 	max-width: 180px;
-}
-
-.timer-fill{
-	position: abolute;
-	top: 0;
-	height: 5px;
-	background-color: #fff;
-	border-radius: 14px;
 }
 
 .imageEffect{
@@ -280,7 +270,7 @@ nav .menu li a svg:hover{
 
 .meet .cards{
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 50% 50%;
 	gap: 30px;
 }
 
@@ -292,7 +282,7 @@ nav .menu li a svg:hover{
 }
 
 .card:hover{
-	background-color: #2d2435;
+	background-color: #2d2040;
 }
 
 .meetTitle{
@@ -321,7 +311,7 @@ nav .menu li a svg:hover{
 
 .project .cards{
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: 33.33% 33.33% 33.33%;
 	padding-top: 2rem;
 	gap: 12px;
 }
@@ -417,7 +407,7 @@ nav .menu li a svg:hover{
 	padding-top: 1rem;
 	display: grid;
 	width: 100%;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: 33.33% 33.33% 33.33%;
 	gap: 5px;
 }
 
@@ -451,7 +441,7 @@ nav .menu li a svg:hover{
 
 .nameLast{
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 50% 50%;
 	gap: 15px;
 }
 
@@ -649,7 +639,7 @@ footer .copyright{
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	height: auto;
 	z-index: 99999;
-	background-color: #2d2440;
+	background-color: #2d2040;
 }
 
 .verifyContent .faCheckCircle{
@@ -705,7 +695,7 @@ footer .copyright{
 
 .github .cards{
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 33.33% 33.33% 33.33%;
 	gap: 0.8rem;
 	padding-top: 2rem;
 	border-radius: 8px;
@@ -727,8 +717,10 @@ footer .copyright{
 }
 
 .github .cards .card .card-title h1{
-	text-transform: uppercase;
 	font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 
 .github .cards .card .card-desc{
@@ -846,6 +838,9 @@ footer .copyright{
 	.project .cardBanner{
 		height: 50%;
 	}
+	.github .cards{
+		grid-template-columns: 50% 50%;
+	}
 }
 
 @media screen and (max-width: 920px) {
@@ -877,10 +872,13 @@ footer .copyright{
 		text-align: left;
 	}
 	.song-content h1{
-		width: 150px
+		width: 195px
 	}
 	.song-content h1:hover{
-		width: 150px
+		width: 195px
+	}
+	.timerRange{
+		max-width: 250px;
 	}
 	.home .homeText .title{
 		font-size: 3em;
@@ -898,7 +896,7 @@ footer .copyright{
 
 @media screen and (max-width: 800px) {
 	.meet .cards{
-		grid-template-columns: auto;
+		grid-template-columns: 100%;
 	}
 	nav .menu{
 		display: none;
@@ -907,7 +905,7 @@ footer .copyright{
 		justify-content: center;
 	}
 	.github .cards{
-		grid-template-columns: auto;
+		grid-template-columns: 100%;
 	}
 }
 
@@ -936,7 +934,7 @@ footer .copyright{
 
 @media screen and (max-width: 510px) {
 	.keazonSkills{
-		grid-template-columns: auto auto;
+		grid-template-columns: 50% 50%;
 	}
 	.home .homeText .title{
 		font-size: 2.3em;
@@ -950,9 +948,6 @@ footer .copyright{
 }
 
 @media screen and (max-width: 450px) {
-	.song-content{
-		text-align: left;
-	}
 	.spotifyIcon{
 		right: -5rem;
 	}
@@ -963,15 +958,15 @@ footer .copyright{
 		width: 150px;
 	}
 	.song-content h1{
-		width: 100px
+		width: 130px
 	}
 	.song-content h1:hover{
-		width: 100px
+		width: 130px
 	}
 }
 
 @media screen and (max-width: 415px) {
 	.keazonSkills{
-		grid-template-columns: auto;
+		grid-template-columns: 100%;
 	}
 }
